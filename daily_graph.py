@@ -652,7 +652,6 @@ def neta(today):
         unexpected_error()
 
 
-
 def do_every_hour():
     try:
         today = datetime.date.today().strftime(r"%Y%m%d")
@@ -707,7 +706,7 @@ def do_every_hour():
         i = 0
         while True:
             try:
-                url = f"https://ranking-gigantic.seichi.click/api/ranking?type=break&offset={i*100}&lim=100&duration=daily"
+                url = f"https://ranking-gigantic.seichi.click/api/ranking?type=build&offset={i*100}&lim=100&duration=daily"
                 res = requests.get(url)
                 player_data_every_hour_dict = res.json()
                 player_data_every_hour_list = player_data_every_hour_dict["ranks"]
